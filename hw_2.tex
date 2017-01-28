@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsfonts}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+ 
+ 
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%If you want to title your bold things something different just make another thing exactly like this but replace "problem" with the name of the thing you want, like theorem or lemma or whatever
+ 
+\begin{document}
+\title{Assignment 2}
+\author{Ao Zeng}
+\maketitle
+\begin{problem}{1}
+\textit{(a)} As $G = \mathbb{Z} / 12 = \{ 0,1,2,3,4,5,6,7,8,9,10,11 \}$, therefore, $\abs{G} = 12$\\
+$\abs{0} = \abs{ \{ \}}$
+\textit{(b)} As $G = (\mathbb{Z}/12)^{\times} $
+\end{problem}
+
+\begin{problem}{2}
+\textit{(a)}  Claim: if $n$ is not prime, $n \neq 1$,and there exists no prime $p$ such that $n = p^2$, then $(n-1)! = 0 \mod n$.\\
+\textit{proof:} Given $n$ is not a prime number, $n \neq 1$, and there exists no prime $p$ such that $n = p^2$, we can derive that:\\
+ $\exists l,m, 1<l<n, 1<m<n$, such that $ n = l \times m$.\\
+ Moreover, $l\neq m$, given that $n$ is not a power of any prime bumber.
+Hence, $l, m$ both divide $(n-1)!$,\\
+which is equivalent to $( n-1!) \mod n = (1\times 2 \times ... \times l \times ... \times m \times .. \times (n-1)) \mod n = 0$\\
+Since $0 \mod n = 0$, we can conclude that $(n-1)! = 0 \mod n = 0$. $\square$\\
+\\
+\textit{(b)} In order to complete the proof, two statements need to be proved.\\
+\textit{(i)} If $n = p^2$, where $p \in \mathbb{P}$, then $(n-1)!\neq -1 \mod n$\\
+Given $n = p^2$, then 
+\end{problem}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

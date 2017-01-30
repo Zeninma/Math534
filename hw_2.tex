@@ -24,18 +24,56 @@ $\abs{0} = \abs{ \{ \}}$
 \end{problem}
 
 \begin{problem}{2}
-\textit{(a)}  Claim: if $n$ is not prime, $n \neq 1$,and there exists no prime $p$ such that $n = p^2$, then $(n-1)! = 0 \mod n$.\\
-\textit{proof:} Given $n$ is not a prime number, $n \neq 1$, and there exists no prime $p$ such that $n = p^2$, we can derive that:\\
+\textit{(a)}  Claim: if $n$ is not prime, and $n\neq 4$, then $(n-1)! = 0 \mod n$.\\
+\textit{proof:} Given $n$ is not a prime number,and $n\neq 4$, we can derive that:\\
+\textit{(i)} When $\forall p \in \mathbb{P}, n\neq p^2$:\\
  $\exists l,m, 1<l<n, 1<m<n$, such that $ n = l \times m$.\\
- Moreover, $l\neq m$, given that $n$ is not a power of any prime bumber.
+Moreover, $l\neq m$, given that $n$ is not a power of any prime bumber.
 Hence, $l, m$ both divide $(n-1)!$,\\
-which is equivalent to $( n-1!) \mod n = (1\times 2 \times ... \times l \times ... \times m \times .. \times (n-1)) \mod n = 0$\\
-Since $0 \mod n = 0$, we can conclude that $(n-1)! = 0 \mod n = 0$. $\square$\\
+which is equivalent to $( n-1!) \mod n = (1\times 2 \times ... \times l \times ... \times m \times .. \times (n-1)) \mod (l \times m) = 0 $\\
+\textit{(ii)} When $\exists p \in \mathbb{P}$ such that $n = p^2$, and $p>2$\\
+Then $\exists some 1<k<p$, such that $k\times p <(n-1)$.\\
+Thus, $( n-1!) \mod n = (1\times 2 \times ... \times p \times ... \times k\times p \times .. \times (n-1)) \mod (p \times p) = 0 $\\
+Since $0 \mod n = 0$, it can be concluded from \textit{(i),(ii)} that $(n-1)! = 0 \mod n = 0$. $\square$\\
 \\
-\textit{(b)} In order to complete the proof, two statements need to be proved.\\
-\textit{(i)} If $n = p^2$, where $p \in \mathbb{P}$, then $(n-1)!\neq -1 \mod n$\\
-Given $n = p^2$, then 
+\textit{(b)} prove the statement that, if $n = 4$, then $(n-1)!\neq -1 \mod n$\\
+As $n = 4$, $(4-1)! \mod 4 = 2$. Since $2\neq (4-1)$, the above statement is proved $\square$.\\
 \end{problem}
+
+\begin{problem}{3} Proof by contradiction:\\
+Given $a$ being the only element in $G$ of order $2$. Assume that $a \notin \mathbb{Z}(G)$.\\
+Then $\exists x \in G$, such that $x\cdot a \neq a \cdot x$\\
+However, as $(x\cdot a \cdot x^{-1})^2 = x \cdot a \cdot x^{-1} \cdot x \cdot a \cdot x^{-1} = x\cdot a \cdot e \cdot a \cdot x^{-1} = x \cdot e \cdot x^{-1} = e$,\\
+$x\cdot a \cdot x^{-1} = e$ or $x\cdot a \cdot x^{-1} = a$.\\
+\textit{(i)} If $x \cdot a \cdot x^{-1}=e$, then $(x\cdot a) =x $, according to uniquness of inverse, $a = e$\\
+\textit{(ii)} If $x \cdot a \cdot x^{-1}=a$, then $ x \cdot a \cdot x^{-1} \cdot x = a \cdot x$, and it is equivalent to $x\cdot a = a \cdot x$.\\
+Since both of these cases \textit{(i)} and \textit{(ii)} are contradictory to our assumpution, therefore, by mathematical contradiction, it can be concluded that $a \in \mathbb{Z}(G)$. $\square$\\
+\end{problem}
+
+\begin{problem}{4}
+Given $H<G, K<G$, and assume that $G = K \cup G$.\\
+\textit{(i)}If $H = K$, then $K \cup H  = H < G$, hence $H \neq K$.\\
+\textit{(ii)}If $H<K$, then $K \cup H = K <G$, hence $H$ can not be a proper subset of $k$. (Same reasoning for $K<H$ is impossible).\\
+\textit{(iii)}If $\exists h \in H, k\in K$ such that $h\notin K$, and $k \notin H$, then since $H<G, K<G$, $hk \in G$.\\
+However $hk \notin H$. If $hk \in H$, then $k = h^{-1} hk \in H$ which is contradictory to the assumpution.\\
+Also $hk \notin K$, otherwise $h = hkk^{-1}$ would be in $K$, which is also contradictory to the assumption.\\
+Therefore, since $hk \notin K$ and $hk \notin H$, $hk \not in K\cup H$, which is equivalent to $G \neq K\cup G$.\\
+Hence, it can be concluded form \textit{(i),(ii),(iii)} that the original statement is true.$\square$\\
+
+\end{problem}
+
+\begin{problem}{5}
+According to the given condition, we know $a\cdot a = e, b\cdot b =e$, and such $H$ can be found as $H = \{ a, b, e, ab \}$\\
+Where $a,b,e,ab$ are all in $G$, and since:\\
+\textit{(i)} $H$ is closed under the same binary operation, as $a \cdot a = e$,$a\cdot b = ab$, $a \cdot e = a$, $a\cdot ab = b$;\\
+$b\cdot a = ba = ab$, $b\cdot b = e$, $b\cdot e = b$, $b\cdot ab = b\cdot ba = a$;\\
+$e \cdot a = a$, $e \cdot b = b$, $e \cdot e = e$, $e \cdot ab = ab$;\\
+$ab \cdot a = ba \cdot a = b$, $ ab\cdot b = a$, $ab \cdot e = ab$, $ab\cdot ab = ab\cdot ba = e$\\
+\textit{(ii)} $\forall h \in H, h^{-1} \in H$, as $a^{-1} = a \in H$, $b^{-1} = b \in H$, $e^{-1} =e \in H$, $(ab)^{-1} = b^{-1}a^{-1} = ba = ab \in H$\\
+\textit{(iii)} $e$ is the same identity in $G$.\\
+Therefore, from \textit{(i),(ii),(iii)}, it can be concluded that $H<G$, and $\abs{H}=4$\\
+\end{problem}
+
 \end{document}
 
 

@@ -19,8 +19,13 @@
 \maketitle
 \begin{problem}{1}
 \textit{(a)} As $G = \mathbb{Z} / 12 = \{ 0,1,2,3,4,5,6,7,8,9,10,11 \}$, therefore, $\abs{G} = 12$\\
-$\abs{0} = \abs{ \{ \}}$
-\textit{(b)} As $G = (\mathbb{Z}/12)^{\times} $
+$\abs{0} = 1, \abs{1} = 12, \abs{2} = 6, \abs{3} = 4, \abs{6} = 2, \abs{7} =12 , \abs{8} = 4, \abs{9} = 4, \abs{10} = 6, \abs{11}=12$\\
+\textit{(b)} As $G = (\mathbb{Z}/12)^{\times} = \{ 1,5,7,11\}$, therefore, $\abs{G} = 4$\\
+$\abs{1} = 1, \abs{5} = 2, \abs{7} = 2, \abs{11} = 2$\\
+\textit{(c)} As $G = (\mathbb{Z}/16)^{\times} = \{ 1, 3, 5, 7, 9, 11, 13, 15 \}$, therefore $\abs{G} = 8$\\
+$\abs{1} = 1, \abs{3} = 4, \abs{5} = 4, \abs{7} = 2, \abs{9} = 2, \abs{11} = 4, \abs{13} = 4, \abs{15} = 2$\\
+\textit{(d)} As $G = \mathbb{S} = \{ I, R_{\pi/2}, R_{\pi}, R_{3\pi/2}, H, V, D, D' \}$, therefore $\abs{G} = 8$\\
+$\abs{I} = 1, \abs{R_{\pi/2}} = 4, \abs{\pi} = 2, \abs{3\pi/2} = 4,\abs{H} = 2, \abs{V} = 2, \abs{D} = 2, \abs{D'} = 2$\\
 \end{problem}
 
 \begin{problem}{2}
@@ -45,10 +50,11 @@ Given $a$ being the only element in $G$ of order $2$. Assume that $a \notin \mat
 Then $\exists x \in G$, such that $x\cdot a \neq a \cdot x$\\
 However, as $(x\cdot a \cdot x^{-1})^2 = x \cdot a \cdot x^{-1} \cdot x \cdot a \cdot x^{-1} = x\cdot a \cdot e \cdot a \cdot x^{-1} = x \cdot e \cdot x^{-1} = e$,\\
 $x\cdot a \cdot x^{-1} = e$ or $x\cdot a \cdot x^{-1} = a$.\\
-\textit{(i)} If $x \cdot a \cdot x^{-1}=e$, then $(x\cdot a) =x $, according to uniquness of inverse, $a = e$\\
+\textit{(i)} If $x \cdot a \cdot x^{-1}=e$, then $(x\cdot a) =x $, then $a = e$\\
 \textit{(ii)} If $x \cdot a \cdot x^{-1}=a$, then $ x \cdot a \cdot x^{-1} \cdot x = a \cdot x$, and it is equivalent to $x\cdot a = a \cdot x$.\\
 Since both of these cases \textit{(i)} and \textit{(ii)} are contradictory to our assumpution, therefore, by mathematical contradiction, it can be concluded that $a \in \mathbb{Z}(G)$. $\square$\\
 \end{problem}
+\newpage
 
 \begin{problem}{4}
 Given $H<G, K<G$, and assume that $G = K \cup G$.\\
@@ -57,7 +63,7 @@ Given $H<G, K<G$, and assume that $G = K \cup G$.\\
 \textit{(iii)}If $\exists h \in H, k\in K$ such that $h\notin K$, and $k \notin H$, then since $H<G, K<G$, $hk \in G$.\\
 However $hk \notin H$. If $hk \in H$, then $k = h^{-1} hk \in H$ which is contradictory to the assumpution.\\
 Also $hk \notin K$, otherwise $h = hkk^{-1}$ would be in $K$, which is also contradictory to the assumption.\\
-Therefore, since $hk \notin K$ and $hk \notin H$, $hk \not in K\cup H$, which is equivalent to $G \neq K\cup G$.\\
+Therefore, since $hk \notin K$ and $hk \notin H$, $hk \notin K\cup H$, which is equivalent to $G \neq K\cup G$.\\
 Hence, it can be concluded form \textit{(i),(ii),(iii)} that the original statement is true.$\square$\\
 
 \end{problem}

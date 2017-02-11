@@ -67,6 +67,14 @@ Since the length of cycle is $10$, at least 10 perfect in shuffles are needed to
 \end{problem}
 
 \begin{problem}{(5)}
+Prove $\Rightarrow$: if two distinct cycles are disjoint $(ab),(cd)$, then \[ \alpha \beta = \begin{pmatrix} ...&a&...&b&...&c&...&d&...\\...&b&...&a&...&d&...&c&... \end{pmatrix}=
+\beta \alpha = \begin{pmatrix} ...&a&...&b&...&c&...&d&...\\...&b&...&a&...&d&...&c&... \end{pmatrix}\].\\
+Therefore, if these two distinct cycles are disjoint then they are commutable.\\
+Prove $\Leftarrow$: assume for commutable elements, these two cycles contain one common elements (since they are distinct, they cannot contain two common elements).\\
+Let $a = c = x$, then \[ \alpha \beta = \begin{pmatrix} ...&x&...&b&...&d&...\\...&d&...&x&...&b&... \end{pmatrix} \neq 
+\begin{pmatrix} ...&x&...&b&...&d&...\\...&b&...&d&...&x&... \end{pmatrix} = \beta \alpha \], which contradicts with the assumption that the elements are commutable.\\
+Hence, two cycles must not conatin common elements and thus are disjoint.\\
+Therefore it can be concluded that the two disjoint distinct cycles have no common elements iff these elements are commutable.\\
 
 \end{problem}
 \end{document}

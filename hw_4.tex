@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsfonts}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+ 
+ 
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%If you want to title your bold things something different just make another thing exactly like this but replace "problem" with the name of the thing you want, like theorem or lemma or whatever
+ 
+\begin{document}
+\title{Assignment 2}
+\author{Ao Zeng}
+\maketitle
+\begin{problem}{(1)}
+\textit{(a)} Denote $H \cap K = X$.\\
+$\forall x,y \in X$, it is obvious that $x,y\in H, h,y\in K$.\\
+Moreover, $x\cdot y \in H$ and $K$, due to $H,K$ are subgroups of $G$. Hence $x\cdot y \in X$ as well.\\
+Therefore, $\forall x,y \in X, x\cdot \in X$, and this suffices to show $\cdot $ is a binop over $X$.\\
+\\
+Then since $H, K$ are both subgroups of $G$, $e \in H,G$, therefore $e \in X$.\\
+\\
+As $H, K$ are both subgroups of $G$, using the same binop, therefore, the operation is still associative
+over $X$.\\
+\\
+Because $X = H \cap K$, $\forall x \in X$, $x \in H,K$ as well. Since $H,K$ are subgroups of $G$, $x^{-1}$ must be in $H, K$.\\
+Further implying that $x^{-1} \in X$. Therefore $\forall x\in X, \exists x^{-1} \in X$.
+\\
+It can be concluded from abve, that $H\cap K \leq G$.\\
+\\
+\textit{(b)} Assume $\exists b^k \in <b>, \exists a^h \in <a>$ such that $ b^k = a^h$, where $k,h \in \mathbb{Z}_+$.\\
+Then $<a> \leq <b>$ or $<b>\leq <a>$. Since $<a>, <b>$ are both finite, hence $\abs{<a>} | \abs{<b>}$ or $\abs{<b>} | \abs{<a>}$.\\
+However, as $\abs{<b>}$ and $\abs{<a>}$ are relatively prime, this is a contradiction.\\
+Therefore, we can conclude that, $<b> \cap <a> = \{ e \}$.
+\end{problem}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

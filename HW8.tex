@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsfonts}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+ 
+ 
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%If you want to title your bold things something different just make another thing exactly like this but replace "problem" with the name of the thing you want, like theorem or lemma or whatever
+ 
+\begin{document}
+\title{Assignment 8}
+\author{Ao Zeng}
+\maketitle
+
+\begin{problem}{1}
+\textit{(i)} Since $\abs{G}$ is odd, according to \textit{Lagrange Theorem}, there doesn't exist $g \in G$, such that $\abs{g} = 2$.\\
+Hence, by the uniqueness of the identity and the uniqueness of the inverse for groups, all the elements except identity $e$ can be divided into distinct, unordered pairs $(a, a^{-1}), (b, b^{-1}) ...$.\\
+For the product of all the elements in $G$, $product = g_1 \cdot g_2 \cdot g_3 ... \cdot g_{\abs{G}}$, as $G$ is abelien, $product$ can be reordered thus $product = e \cdot(g_1 \cdot g_1^{-1}) \cdot (g_2 \cdot g_2^{-1}) \cdot ... = e \cdot e \cdot e \cdot ... = e$.\\
+Therefore, the product of all of the elements in $G$ is the identity. $\square$.\\
+\textit{(ii)} Claim: it is not true when $\abs{G}$ is even.\\
+prove by counter example: Let $G = \mathbb{Z}/4$, and $\abs{G} = 4$\\
+Then the product of all of the elements in $G$ is $ 0 \cdot 1 \cdot 2 \cdot 3  = 2$, which does not equal to the identity $0$.\\
+Thus, by the counter example it is not true if $\abs{G}$ is even.
+\end{problem}
+
+\begin{problem}{2}
+Prove by countradiction: Assume $G$ does not have an element of order $2$.\\
+By $Lagrange Theorem$, $g \in G$ can have the order $1,2,4,8$\\. According to the uniqueness of identity, only $e$ has order $1$. Therefore, the rest of the elements in $G$ can only have order of $2,4,8$.\\
+As it is assumed that $G$ has no element of order $2$. Hence the rest elements in $G$ must have order $4$ or $8$.\\
+If $\exists g \in G, g\neq e$, such that $\abs{g} = 4$, then $ g \cdot g \cdot g \cdot g = g^2 \cdot g^2 = e$. Then $\abs{g} = 2$ or $\abs{g^2} =2$. in either case it contradictes with the assumption.\\
+If $\exists g \in G, g \neq e$, such that $\abs{g} = 8$, then $g^8 = e$. Then $\abs{g} = 2$, or $\abs{g^2} = 2$ or $\abs{g^4} = 2$. In either case, it contradictes with our assumption.\\
+As shown above, in either case, it contradicts with our assumption. Therefore, $G$ has an element of 2.$\square$\\
+\end{problem}
+\begin{problem}{3}
+Since has been proved before that $H\cap K \leq H$, $H\cap K \leq K$. Hence $\abs{H \cap K}|\abs{H}$ and $\abs{H \cap K} | \abs{K}$.\\
+Therefore, $\abs{H\cap K}$ has to be a common divisor of $\abs{H}$ and $\abs{K}$, which are $1,2,4$.\\
+\textit{(i)} If, $\abs{H\cap K} = 1$, then $H \cap K$ has to be ${e}$, which is obviously abelian.\\
+\textit{(ii)} If, $\abs{H \cap K} = 2$, then $H \cap K = {a ,e}$, and according to \textit{Lagrange Theorem}, $\abs{a} = 2$. $H \cap K$ then is abelian as $a \cdot e = a = e \cdot a$\\
+\textit{(iii)} If $\abs{H\cap K} = 4$, then denote $H \cap K$ as ${e, a, b, c}$:\\
+If $H\cap K$ has an element of order $4$, then $H \cap K$ is a cyclic group, and then is abelian.\\
+If $H \cap K$ does not have an element of order $4$, then except $e$, $a,b,c$ all have order 2.\\
+Fixed $a,b$, then $c = a\cdot b$ and $ c = b \cdot a$. Which implies that $b\cdot a = a\cdot b$.\\
+Following that $c \cdot a = a \cdot (b \cdot a) = a \cdot b$. Similarly $c \cdot b = b \cdot a$.\\
+Therefore $\forall g_1, g_2 \in H \cap K$, $g_1 \cdot g_2 = g_2 \cdot g_1$. Hence, it is abelian.\\
+From \textit{(i), (ii), (iii)}, it can be concluded that $H \cap K$ must be abelian. $\square$\\
+\end{problem}
+
+\begin{problem}{4}
+\textit{(i)} $\forall h_1,h_2,k_1,k_2 \in H\times K$, $\phi((h_1,k_1),(h_2, k_2)) = \phi((h_1h_2, k_1 k_2)) = h_1 h_2 k_1 k_2$.\\
+Since $G$ is abelian, $h_1 h_2 k_1 k_2 = h_1 k_1 h_2 k_2 = \phi(h_1,k_1) \phi(h_2, k_2)$.\\
+Therefore, it can be concluded that $\phi((h_1,k_1),(h_2, k_2)) = \phi(h_1,k_1) \phi(h_2, k_2)$, which implies that $\phi: H \times K \rightarrow G$ is a homomorphism. $\square$\\
+\textit{(ii)} \textit{(a)} prove that if $\phi$ is onto then $G = HK$.\\
+Given that $\phi$ is onto, $\forall g \in G, \exists (h,k) \in H\times K$, such that, $\phi(h,k) = hk = g$.\\
+Which is equivalent to $\forall g \in G, g \in HK$. Also by the fact that $H\leq G, K\leq G$, $\forall x \in HK, x \in G$.\\
+Hence it can be concluded that if $\phi$ is onto, then $G = HK$.
+\textit{(b)} prove the if $G = HK$, then $\phi$ is onto.\\
+Since $G = HK$, then $\forall g\in G, \exists h\in H, k\in K$, such that $hk = g$.\\
+Then by using such $h,k$ to form the pair $(h,k)$, it can be derived that $\phi(h,k) = hk = g$. \\
+Thus it can be concluded that $\forall g\in G, \exists (h,k) \in H \times K$, such that $\phi(h,k) = g$.\\
+Which is equivalent to that $\phi$ is onto.\\
+Therefore, by part $(a),(b)$, it can be concluded that $\phi$ is onto iff $G = HK$. $\square$\\
+\textit{(iii)} By the property of Homormophism that $\phi$ is injective iff $Ker(\phi) = \{ e \}$.\\
+Thus the given statemetn can be proved by proving that $Ker(\phi) = \{e \}$ implies $H \cap K$ is trivial.\\
+Assume $Ker(\phi) = \{e \}$, and $H\cap K$ is not trivial. Then $\exists g\neq e$, such  that $g \in H$ and $g\in K$.\\
+Then by the fact that both $H,K$ are groups $\exists g^{-1}$ that is in $H,K$.\\
+Then $\phi((g,g^{-1})) = gg^{_1} =e$, which contradicts to our assumption. Therefore, $Ker(\phi) = {e}$ must imply that $H \cap K$ is trivial.\\
+Thus, $\phi$ is injective iff $H\cap K$ is trivial.$\square$\\
+\end{problem}
+
+\begin{problem}{5}
+\textit{(a)} Claim: $G$ is not cyclic.\\
+Assume $G = <g >$, denote $g = (a,b)$. Then either $a =0, b = 0$ or not.\\
+In the first case $!\exists n \in \mathbb{Z}$, such that $g^n = (1,1)$, which contradicts with the assumption.\\
+In the latter case, WLOG, assume $g = (a,b)$, where $b != 0$, then $!\exists n \in \mathbb{Z}$, such that $b^n = 0$, which implies that $g^n$ cannot equal to $(0,0)$.\\
+Therefore, it can be concluded from above that, $G$ is not a cyclic group. $\square$\\
+\textit{(b)}
+\end{problem}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

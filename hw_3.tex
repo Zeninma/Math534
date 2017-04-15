@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsfonts}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+ 
+ 
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%If you want to title your bold things something different just make another thing exactly like this but replace "problem" with the name of the thing you want, like theorem or lemma or whatever
+\begin{document}
+\title{Assignment 3}
+\author{Ao Zeng}
+\maketitle
+
+\begin{problem}{1}
+\textit{(a)} To prove $(GL_{2}(\mathbb{R}), \cdot)$ is a group:\\
+\textit{(i)} Prove $\cdot$ is a binary operation on $(GL_{2}(\mathbb{R})$\\
+$\forall m_1, m_2 \in GL_{2}(\mathbb{R})$,
+\[m_1 = 
+    \begin{pmatrix}
+    a & b\\
+    c & d
+    \end{pmatrix}
+m_2 = 
+    \begin{pmatrix}
+    e & f\\
+    g & h
+    \end{pmatrix}
+m_1 \cdot m_2 =
+    \begin{pmatrix}
+    ae + bg & fa + bh\\
+    ce+dg & cf + dh
+    \end{pmatrix}
+\],
+since $m_1 \cdot m_2 = m_3=(ae + bg)(cd + dh) - (fa + bg)(ce + dg) = (ad -bc)(he - fg) \neq 0$, as $(ad - bc) \neq 0, (he -hg) \neq 0$\\
+$m_3 \in GL_{2}(\mathbb{R})$.\\
+Therefore it can be concluded that $\cdot$ is a binary operation on $GL_{2}(\mathbb{R})$
+\textit{(ii)} Prove Associativity:\\
+$\forall m_1, m_2, m_3 \in GL_{2}(\mathbb{R})$, where,\
+\[ m_1 = 
+    \begin{pmatrix}
+    a & b\\
+    c & d
+    \end{pmatrix}
+,m_2 =
+    \begin{pmatrix}
+    e&f\\
+    g&h
+    \end{pmatrix}
+,m_3 =
+    \begin{pmatrix}
+    i & j\\
+    k & l
+    \end{pmatrix}
+\],\\
+\[(m_1 \cdot m_2) \cdot m_3 = 
+    \begin{pmatrix}
+    aei + bgi + afk +bhk & aej + bgj + afl + bhl\\
+    cei + dgi + dfk + dhk & cej + dgj + cfl + dhl
+    \end{pmatrix}
+    = m_1 \cdot (m_2 \cdot m_3)
+\]
+Therefore it possesses Associativity.\\
+\texit{(iii)} Prove existence of Identity:\\
+\[\text{Let } e = 
+\begin{pmatrix}
+ 1 & 0\\
+ 0 & 1
+\end{pmatrix}
+\text{Then $\forall m \in GL_{2}(\mathbb{R}), m=$}
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+\]
+\[
+m \cdot e =
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+ a & b\\
+ c & d
+\end{pmatrix}
+=
+\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+=
+e \cdot m
+\]
+Therefore there exists identity $e \in GL_{2}(\mathbb{R})$\\
+\texit{(iv)} Prove Inverse\\
+\[ \forall m \in GL_2(\mathbb{R}) \text{, } m = 
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+\text{,Let } m^{-1} = \frac{1}{ad - bc}
+\begin{pmatrix}
+    d & -b\\
+    -c & a
+\end{pmatrix}
+\]
+\[\text{Then } m \cdot m^{-1} = \frac{1}{ad - bc}
+\begin{pmatrix}
+    a & b\\
+    c & d
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+d & -b\\
+-c & a
+\end{pmatrix}
+=
+\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+\end{pmatrix} = e = \frac{1}{ad - bc}
+\begin{pmatrix}
+d & -b\\
+-c & a
+\end{pmatrix} \cdot
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix} = m^{-1} \cdot m
+    \]
+As $d \times a - (-d) \times (-b) \neq 0$ as $ a\times d - b \times c \neq 0$, therefore, it can be
+concluded that $\forall m \in GL_2(\mathbb{R}), \exists m^{-1} \in GL_2(\mathbb{R})$ such that
+$m \cdot m^{-1} = e = m^{-1} \cdot m$
+Hence from \textit{(i),(ii),(iii),(iv)}, it can be concluded that $GL_2(\mathbb{R})$ is a group.\\
+\textit{(b)}
+\end{problem}
+
+\end{document}
